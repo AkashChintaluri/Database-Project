@@ -1,0 +1,13 @@
+C:\Users\akash\OneDrive\Desktop\Database-Project\bin\Debug\Database-Project.exe.config
+C:\Users\akash\OneDrive\Desktop\Database-Project\bin\Debug\Database-Project.exe
+C:\Users\akash\OneDrive\Desktop\Database-Project\bin\Debug\Database-Project.pdb
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.csproj.AssemblyReference.cache
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form1.resources
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form2.resources
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form3.resources
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form4.resources
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Properties.Resources.resources
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.csproj.GenerateResource.cache
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.csproj.CoreCompileInputs.cache
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.exe
+C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.pdb
