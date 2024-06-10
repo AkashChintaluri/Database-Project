@@ -45,7 +45,6 @@ namespace Database_Project
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Get the primary key of the selected row (assuming it's in the first cell)
                 string primaryKey = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
 
                 using (SqlConnection conn = new SqlConnection(connString))

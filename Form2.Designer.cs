@@ -139,6 +139,7 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Name = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

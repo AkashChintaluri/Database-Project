@@ -23,6 +23,18 @@ namespace Database_Project
             string connString = "Data Source=AKASHPC;Initial Catalog=TDK;Integrated Security=True";
             string query = "INSERT INTO Employee_Details (Name, PhoneNo, Email, Address) VALUES (@Name, @PhoneNumber, @Email, @Address)";
 
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox7.Text, @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"))
+            {
+                MessageBox.Show("Invalid Email!");
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, @"^[0-9]{10}$"))
+            {
+                MessageBox.Show("Invalid Phone Number! It should be 10 digits.");
+                return;
+            }
+
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -57,6 +69,11 @@ namespace Database_Project
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }

@@ -26,6 +26,18 @@ namespace Database_Project
         {
             string query = "UPDATE Employee_Details SET Name = @Name, PhoneNo = @PhoneNo, Email = @Email, Address = @Address WHERE PhoneNo = @SearchPhoneNumber";
 
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox7.Text, @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"))
+            {
+                MessageBox.Show("Invalid Email!");
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, @"^[0-9]{10}$"))
+            {
+                MessageBox.Show("Invalid Phone Number! It should be 10 digits.");
+                return;
+            }
+
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -47,6 +59,18 @@ namespace Database_Project
         private void Form3_Load(object sender, EventArgs e)
         {
             string query = "SELECT Name, PhoneNo, Email, Address FROM Employee_Details WHERE PhoneNo = @PhoneNumber";
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox7.Text, @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"))
+            {
+                MessageBox.Show("Invalid Email!");
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox6.Text, @"^[0-9]{10}$"))
+            {
+                MessageBox.Show("Invalid Phone Number! It should be 10 digits.");
+                return;
+            }
 
             using (SqlConnection connection = new SqlConnection(connString))
             {
