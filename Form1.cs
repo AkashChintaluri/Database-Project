@@ -33,9 +33,32 @@ namespace Database_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var myForm = new Form4();
-            myForm.Show();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Get the primary key of the selected row (assuming it's in the first cell)
+                string primaryKey = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = "DELETE FROM dbo.Employee_Details WHERE PhoneNo = @PrimaryKey";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@PrimaryKey", primaryKey);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
+                button4_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
         }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -61,6 +84,11 @@ namespace Database_Project
             {
                 MessageBox.Show("Exception: " + ex.Message);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
