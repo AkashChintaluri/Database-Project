@@ -5,7 +5,6 @@ C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.cspr
 C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form1.resources
 C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form2.resources
 C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form3.resources
-C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Form4.resources
 C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database_Project.Properties.Resources.resources
 C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.csproj.GenerateResource.cache
 C:\Users\akash\OneDrive\Desktop\Database-Project\obj\Debug\Database-Project.csproj.CoreCompileInputs.cache

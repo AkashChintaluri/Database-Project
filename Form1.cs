@@ -27,8 +27,18 @@ namespace Database_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var myForm = new Form3();
-            myForm.Show();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Get the primary key of the selected row (assuming it's in the first cell)
+                string primaryKey = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+
+                var myForm = new Form3(primaryKey);
+                myForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to update.");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

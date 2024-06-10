@@ -14,20 +14,45 @@ namespace Database_Project
     public partial class Form3 : Form
     {
         string connString = "Data Source=AKASHPC;Initial Catalog=TDK;Integrated Security=True";
-        public Form3()
+        string phoneNumber;
+
+        public Form3(string phoneNumber)
         {
             InitializeComponent();
+            this.phoneNumber = phoneNumber;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {            
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE Employee_Details SET Name = @Name, PhoneNo = @PhoneNo, Email = @Email, Address = @Address WHERE PhoneNo = @SearchPhoneNumber";
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", textBox5.Text);
+                    command.Parameters.AddWithValue("@PhoneNo", textBox6.Text);
+                    command.Parameters.AddWithValue("@Email", textBox7.Text);
+                    command.Parameters.AddWithValue("@Address", textBox8.Text);
+                    command.Parameters.AddWithValue("@SearchPhoneNumber", this.phoneNumber);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Data updated successfully!");
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
             string query = "SELECT Name, PhoneNo, Email, Address FROM Employee_Details WHERE PhoneNo = @PhoneNumber";
 
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@PhoneNumber", textBox1.Text);
+                    command.Parameters.AddWithValue("@PhoneNumber", this.phoneNumber);
 
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -46,34 +71,6 @@ namespace Database_Project
                     }
                 }
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string query = "UPDATE Employee_Details SET Name = @Name, PhoneNo = @PhoneNo, Email = @Email, Address = @Address WHERE PhoneNo = @SearchPhoneNumber";
-
-            using (SqlConnection connection = new SqlConnection(connString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Name", textBox5.Text);
-                    command.Parameters.AddWithValue("@PhoneNo", textBox6.Text);
-                    command.Parameters.AddWithValue("@Email", textBox7.Text);
-                    command.Parameters.AddWithValue("@Address", textBox8.Text);
-                    command.Parameters.AddWithValue("@SearchPhoneNumber", textBox1.Text);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-            }
-
-            MessageBox.Show("Data updated successfully!");
-        }
-
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
